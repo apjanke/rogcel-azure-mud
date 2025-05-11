@@ -27,6 +27,17 @@
 			"metadata": {
 				"description": "The URL of the GitHub repository for your azure-mud fork."
 			}
+		},
+		"signalRTier": {
+			"type": "string",
+			"allowedValues": [
+				"Free",
+				"Standard"
+			],
+			"defaultValue": "Free",
+			"metadata": {
+				"description": "The tier of the SignalR service to deploy. Free will save you money. Standard will match the tier used by the actual Roguelike Celebration instance. The Free tier does not support network ACLs, which we define, so using the Free tier may not exactly match the behavior of the real MUD instance."
+			}
 		}
 	},
 	"variables": {
@@ -202,7 +213,7 @@
 			"location": "[resourceGroup().location]",
 			"sku": {
 				"capacity": 1,
-				"name": "Free_F1"
+				"name": "[if(equals(parameters('signalRTier'), 'Free'), 'Free_F1', 'Standard_S1')]"
 			},
 			"kind": "SignalR",
 			"dependsOn": [
@@ -263,8 +274,7 @@
 			"location": "[resourceGroup().location]",
 			"sku": {
 				"capacity": 1,
-				"name": "Free_F1",
-				"tier": "Free"
+				"name": "[if(equals(parameters('signalRTier'), 'Free'), 'Free_F1', 'Standard_S1')]"
 			},
 			"identity": {
 				"type": "None"
