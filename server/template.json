@@ -156,10 +156,10 @@
 			"apiVersion": "2020-06-01",
 			"location": "[resourceGroup().location]",
 			"properties": {
-				"enableNonSslPort": "false",
+				"enableNonSslPort": false,
 				"minimumTlsVersion": "1.2",
 				"sku": {
-					"capacity": "0",
+					"capacity": 0,
 					"family": "C",
 					"name": "Basic"
 				}
@@ -168,9 +168,10 @@
 		{
 			"type": "Microsoft.Insights/components",
 			"name": "[variables('appInsightsName')]",
-			"apiVersion": "2014-04-01",
+			"apiVersion": "2020-02-02",
 			"location": "[resourceGroup().location]",
 			"properties": {
+				"Application_Type": "web",
 				"applicationId": "[variables('appInsightsName')]"
 			}
 		},
@@ -199,7 +200,7 @@
 			"apiVersion": "2020-07-01-preview",
 			"location": "[resourceGroup().location]",
 			"sku": {
-				"capacity": "1",
+				"capacity": 1,
 				"name": "Free_F1"
 			},
 			"kind": "SignalR",
