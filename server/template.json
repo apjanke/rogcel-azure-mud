@@ -31,7 +31,8 @@
 	},
 	"variables": {
 		"functionAppName": "[parameters('appName')]",
-		"storageAccountName": "[concat(uniquestring(resourceGroup().id), 'functions')]",
+		"storageAccountPrefixSafe": "[replace(replace(replace(parameters('appName'), '-', ''), '_', ''), '.', '')]",
+		"storageAccountName": "[concat(take(concat(variables('storageAccountPrefixSafe'), uniquestring(resourceGroup().id, deployment().name)), 20), 'fcns')]",
 		"signalRName": "[concat(parameters('appName'), '-', uniquestring(resourceGroup().id), '-signalr')]",
 		"redisCacheName": "[concat(parameters('appName'), '-', uniquestring(resourceGroup().id), '-redis')]",
 		"appInsightsName": "[concat(parameters('appName'), '-', uniquestring(resourceGroup().id), '-ai')]",
