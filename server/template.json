@@ -49,9 +49,9 @@
 			}
 		},
 		{
-			"apiVersion": "2018-11-01",
 			"type": "Microsoft.Web/sites",
 			"name": "[variables('functionAppName')]",
+			"apiVersion": "2018-11-01",
 			"location": "[resourceGroup().location]",
 			"kind": "functionapp",
 			"dependsOn": [
@@ -129,9 +129,9 @@
 				}
 			},
 			"resources": [{
+				"type": "config",
 				"name": "authsettings",
 				"apiVersion": "2016-08-01",
-				"type": "config",
 				"location": "[resourceGroup().location]",
 				"dependsOn": [
 					"[resourceId('Microsoft.Web/sites', variables('functionAppName'))]",
@@ -142,7 +142,6 @@
 					"unauthenticatedClientAction": "AllowAnonymous",
 					"tokenStoreEnabled": true,
 					"defaultProvider": "Twitter",
-
 					"allowedExternalRedirectUrls": [
 						"http://localhost:1234",
 						"[parameters('clientHostname')]",
@@ -153,8 +152,8 @@
 		},
 		{
 			"type": "Microsoft.Cache/Redis",
-			"apiVersion": "2020-06-01",
 			"name": "[variables('redisCacheName')]",
+			"apiVersion": "2020-06-01",
 			"location": "[resourceGroup().location]",
 			"properties": {
 				"enableNonSslPort": "false",
@@ -167,18 +166,18 @@
 			}
 		},
 		{
-			"apiVersion": "2014-04-01",
-			"name": "[variables('appInsightsName')]",
 			"type": "Microsoft.Insights/components",
+			"name": "[variables('appInsightsName')]",
+			"apiVersion": "2014-04-01",
 			"location": "[resourceGroup().location]",
 			"properties": {
 				"applicationId": "[variables('appInsightsName')]"
 			}
 		},
 		{
-			"apiVersion": "2021-01-15",
-			"name": "[variables('aswaName')]",
 			"type": "Microsoft.Web/staticSites",
+			"name": "[variables('aswaName')]",
+			"apiVersion": "2021-01-15",
 			"location": "[resourceGroup().location]",
 			"properties": {
 				"repositoryUrl": "[parameters('repositoryUrl')]",
@@ -196,8 +195,8 @@
 		},
 		{
 			"type": "Microsoft.SignalRService/SignalR",
-			"apiVersion": "2020-07-01-preview",
 			"name": "[variables('signalRName')]",
+			"apiVersion": "2020-07-01-preview",
 			"location": "[resourceGroup().location]",
 			"sku": {
 				"capacity": "1",
@@ -257,8 +256,8 @@
 
 		{
 			"type": "Microsoft.SignalRService/webPubSub",
-			"apiVersion": "2021-10-01",
 			"name": "[variables('pubsubName')]",
+			"apiVersion": "2021-10-01",
 			"location": "[resourceGroup().location]",
 			"sku": {
 				"capacity": 1,
