@@ -13,19 +13,19 @@
 			"type": "string",
 			"defaultValue": "https://chat.roguelike.club",
 			"metadata": {
-				"description": "The hostname for where your frontend will be hosted. This must be served over HTTPS. You can leave this as the default if you don't plan to set up a custom domain (but it can't be empty because computers)"
+				"description": "The hostname for where your frontend will be hosted. This must be served over HTTPS. You can leave this as the default if you don't plan to set up a custom domain (but it can't be empty because computers)."
 			}
 		},
 		"repositoryToken": {
 			"type": "string",
 			"metadata": {
-				"description": "The GitHub personal access token used to access your repository. See https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens"
+				"description": "The GitHub personal access token used to access your repository. See https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens."
 			}
 		},
 		"repositoryUrl": {
 			"type": "string",
 			"metadata": {
-				"description": "The URL of the GitHub repository for your azure-mud fork"
+				"description": "The URL of the GitHub repository for your azure-mud fork."
 			}
 		}
 	},
