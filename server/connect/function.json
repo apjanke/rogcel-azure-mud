@@ -8,6 +8,13 @@
       "methods": ["get", "post"]
     },
     {
+      "type": "webPubSubConnection",
+      "name": "pubsubconnection",
+      "hub": "chat",
+      "userId": "{headers.userid}",
+      "direction": "in"
+    },
+    {
       "type": "webPubSub",
       "name": "actions",
       "hub": "chat",
