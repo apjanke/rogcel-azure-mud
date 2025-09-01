@@ -56,9 +56,9 @@ If you don't already have an Azure account/subscription, you'll get a few hundre
 
 ### Deploying via ARM Template
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FRoguelike-Celebration%2Fazure-mud%2Fmain%2Fserver%2Ftemplate.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FRoguelike-Celebration%2Fazure-mud%2Fmain%2Finfra%2Ftemplate.json)
 
-The easiest way to deploy a backend is to use the template we have prepared. Going to [this link](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FRoguelike-Celebration%2Fazure-mud%2Fmain%2Fserver%2Ftemplate.json) will allow you to deploy a server backend to an Azure resource group you specify that will have everything configured, but won't actually contain code yet.
+The easiest way to deploy a backend is to use the template we have prepared. Going to [this link](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FRoguelike-Celebration%2Fazure-mud%2Fmain%2Finfra%2Ftemplate.json) will allow you to deploy a server backend to an Azure resource group you specify that will have everything configured, but won't actually contain code yet.
 
 As a prerequisite, you will need the resource provider for Application Insights registered for your Azure subscription. The ARM template does not do this part for you. To register it, in the Azure Portal, go to Subscriptions and select your subscription. Then select Settings > Resource providers, find `Microsoft.OperationalInsights` in the provider list, select it, and click the Register button at the top of the list.
 
